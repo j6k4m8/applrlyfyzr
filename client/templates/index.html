@@ -1,0 +1,19 @@
+<body>
+    {{> main}}	
+</body>
+
+<template name="main">
+    {{#with random_app}}
+    {{> show_app}}
+    {{/with}}
+</template>
+
+<template name="show_app">
+    <div class="nav">
+    	<div class="title">{{app_title}}</div>
+    </div>
+    <div class="body">
+        <div class="logo">{{app_title}}</div>
+        <div class="tagline">{{app_tagline}}</div>
+    </div>
+</template>
