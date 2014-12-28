@@ -12,6 +12,14 @@ Template.show_app.helpers({
 
     app_tagline: function() {
         return this.tagline;
+    },
+
+    splash_to_css: function() {
+        return "url(" + this.splash + ") no-repeat center center";
+    },
+
+    current_year: function() {
+        return (new Date()).getUTCFullYear();
     }
 });
 

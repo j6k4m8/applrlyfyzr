@@ -9,11 +9,56 @@
 </template>
 
 <template name="show_app">
-    <div class="nav">
-    	<div class="title">{{app_title}}</div>
+    
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">{{app_title}}</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Team</a></li>
+        </ul>
     </div>
-    <div class="body">
-        <div class="logo">{{app_title}}</div>
-        <div class="tagline">{{app_tagline}}</div>
+</nav>
+
+
+    <div class="container">
+        <div class="splash">
+            <div class="row jumbotron" style="background: {{splash_to_css}}">
+                <div class="col-xs-12">
+                    <h1 class="logo">{{app_title}}</h1>
+                    <h2 class="tagline">{{app_tagline}}</h2>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="well">
+                        <h1>{{original}}.</h1>
+                        <p>Here at {{app_title}}, we know the value of a good {{original}}. We live in {{current_year}}: It's time to have {{current_year}}-worthy {{original}}.</p>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="well">
+                    <h1>Introducing {{app_title}}.</h1>
+                    <p>We're not your ordinary {{original}}: We're {{app_tagline}} Get your {{original}} on now.</p>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 well">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="{{app_title}} Mailing List">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="button">Give me the {{original}}!</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+            </div>
+        </div>
     </div>
 </template>

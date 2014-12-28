@@ -8,7 +8,7 @@ meteor-platform
 autopublish
 insecure
 jquery
-bootstrap
 underscore
 less
 http
+mizzao:bootstrap-3
