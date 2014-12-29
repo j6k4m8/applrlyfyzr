@@ -1,6 +1,9 @@
 Template.main.helpers({
     random_app: function() {
-        return Apps.findOne();
+        request = document.location.toString().split('/').slice(-1)[0].replace('?','');
+        if (Apps.findOne({title: request})) return Apps.findOne({title: request});
+        if (Apps.findOne({original: request})) return Apps.findOne({original: request});
+        else return Apps.find().fetch()[parseInt(Math.random()*Apps.find().fetch().length)];
     }
 });
 
@@ -23,3 +26,14 @@ Template.show_app.helpers({
     }
 });
 
+Template.show_app.events = {
+    'click .btn-default': function() {
+        var newNoun = $('.new-noun-input').val();
+        if (!newNoun) return;
+        else {
+            Meteor.call('newApp', newNoun, function(err, val) {
+                if (!err) location = location + "/" + newNoun;
+            });
+        }
+    }
+};

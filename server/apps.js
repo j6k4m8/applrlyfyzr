@@ -30,3 +30,10 @@ newApp = function(noun) {
         splash: randomImage.url
     });
 };
+
+
+Meteor.methods({
+    'newApp': function(newNoun) {
+        return newApp(newNoun);
+    }
+});
